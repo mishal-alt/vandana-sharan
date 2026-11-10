@@ -16,7 +16,7 @@ let d = '135f969c-2fe5-4cda-b5da-3705554f4082',
   h = '/images/vandana-sharan',
   p = {
     envelope: `${h}/envelope.webp`,
-    om: `${h}/om.webp`,
+    reveal: `${h}/reveal.webp`,
     couple: `${h}/couple.webp`,
     kids: `${h}/kids.webp`,
     foil: `${h}/foil.webp`,
@@ -27,11 +27,11 @@ let d = '135f969c-2fe5-4cda-b5da-3705554f4082',
   f = '2026-12-06T08:15:00+05:30',
   m = Date.parse(f),
   g = {
-    title: 'Wedding — Dr. Vandana & Dr. Sharan',
+    title: 'Wedding — Dr. Sharan & Dr. Vandana',
     start: new Date(f),
     end: new Date('2026-12-06T12:00:00+05:30'),
     location: 'Souparnika Auditorium, Chottanikara, Thirupunithura, Kochi, Kerala',
-    details: 'The wedding of Dr. Vandana & Dr. Sharan. Reception on 7 December 2026 at Dhanalakshmi Srinivasan Mahal, Perambalur.',
+    details: 'The wedding of Dr. Sharan & Dr. Vandana. Reception on 7 December 2026 at Dhanalakshmi Srinivasan Mahal, Perambalur.',
     uid: `${d}-main@zetron.tech`,
   },
   u = '#4a3a2e',
@@ -605,28 +605,6 @@ function J({ top: a, bottom: e, w: t = 84, wash: i, start: r, children: s }) {
     children: s,
   })
 }
-function Q() {
-  let a = `url('${h}/om-mask.png')`
-  return (0, n.jsxs)(n.Fragment, {
-    children: [
-      (0, n.jsx)('div', {
-        className: 'aa-halo',
-        style: { left: '32%', top: '1%', width: '36%', height: '23%' },
-      }),
-      (0, n.jsx)('div', {
-        className: 'aa-glint',
-        style: {
-          left: '42.45%',
-          top: '3.95%',
-          width: '15%',
-          height: '16.03%',
-          WebkitMaskImage: a,
-          maskImage: a,
-        },
-      }),
-    ],
-  })
-}
 function U() {
   let a = `url('${h}/foil-mask.webp')`
   return (0, n.jsxs)(n.Fragment, {
@@ -883,7 +861,7 @@ function ai({ onBegin: a, onDone: e }) {
             (0, n.jsx)('div', {
               className: 'aa-card',
               'aria-hidden': !0,
-              children: (0, n.jsx)('img', { src: p.om, alt: '', draggable: !1 }),
+              children: (0, n.jsx)('img', { src: p.reveal, alt: '', draggable: !1 }),
             }),
             (0, n.jsx)('div', {
               className: 'aa-pocket',
@@ -907,7 +885,7 @@ function ai({ onBegin: a, onDone: e }) {
                     letterSpacing: '.04em',
                   },
                   children: [
-                    'V',
+                    'S',
                     (0, n.jsx)('span', {
                       style: {
                         fontStyle: 'italic',
@@ -918,7 +896,7 @@ function ai({ onBegin: a, onDone: e }) {
                       },
                       children: '&',
                     }),
-                    'S',
+                    'V',
                   ],
                 }),
                 (0, n.jsx)('div', {
@@ -1474,7 +1452,7 @@ function ad() {
       if (null === t) return void p('Please let us know if you can attend.')
       ;(p(''), c('sending'))
       try {
-        let msg = `Hello! This is ${a.trim()}. ${t ? `I will be attending (${r} ${1 === r ? 'guest' : 'guests'}).` : 'Sorry, I will not be able to attend.'} - Dr. Vandana & Dr. Sharan's wedding`
+        let msg = `Hello! This is ${a.trim()}. ${t ? `I will be attending (${r} ${1 === r ? 'guest' : 'guests'}).` : 'Sorry, I will not be able to attend.'} - Dr. Sharan & Dr. Vandana's wedding`
         ;(window.open(`https://wa.me/${RSVP_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener'), c('done'))
       } catch {
         ;(p('Network error — please check your connection and try again.'), c('idle'))
@@ -1865,12 +1843,12 @@ function af({ delay: a }) {
           letterSpacing: '.04em',
         },
         children: [
-          'V',
+          'S',
           (0, n.jsx)('span', {
             style: { fontStyle: 'italic', fontSize: '.55em', color: b, margin: '0 .22em' },
             children: '&',
           }),
-          'S',
+          'V',
         ],
       }),
     ],
@@ -1980,25 +1958,13 @@ export default function () {
           children: [
             (0, n.jsx)(q, {
               id: 'aa-reveal',
-              art: p.om,
-              overlays: (0, n.jsx)(Q, {}),
+              art: p.reveal,
               label: 'The invitation',
               eager: !0,
               children: (0, n.jsxs)(J, {
                 top: 24,
                 bottom: 22.5,
                 children: [
-                  (0, n.jsx)(Y, { text: '“Let us take these seven steps together,', delay: 0.2 }),
-                  (0, n.jsx)(Y, { text: 'and be friends for life.”', delay: 0.9 }),
-                  (0, n.jsx)(B, {
-                    size: 2.6,
-                    track: 0.34,
-                    color: x,
-                    delay: 1.6,
-                    style: { marginTop: w(1.4) },
-                    children: 'Saptapadi',
-                  }),
-                  (0, n.jsx)(G, { w: 18, delay: 1.9, gap: 3.4 }),
                   (0, n.jsx)(B, {
                     size: 2.7,
                     track: 0.32,
@@ -2006,9 +1972,9 @@ export default function () {
                     children: 'Together with their family',
                   }),
                   (0, n.jsx)('div', { style: { height: w(3) } }),
-                  (0, n.jsx)(H, { text: 'Dr. Vandana', size: 7.2, delay: 2.5 }),
+                  (0, n.jsx)(H, { text: 'Dr. Sharan', size: 7.2, delay: 2.5 }),
                   (0, n.jsx)(X, { size: 9, delay: 3.2, style: { margin: `${w(0.2)} 0` }, children: 'and' }),
-                  (0, n.jsx)(H, { text: 'Dr. Sharan', size: 7.2, delay: 3.6 }),
+                  (0, n.jsx)(H, { text: 'Dr. Vandana', size: 7.2, delay: 3.6 }),
                   (0, n.jsx)('div', { style: { height: w(3.4) } }),
                   (0, n.jsxs)(B, {
                     size: 2.6,
@@ -2148,8 +2114,8 @@ export default function () {
                 children: [
                   (0, n.jsx)(B, { size: 3, track: 0.5, color: x, delay: 0.1, children: 'Our Moments' }),
                   (0, n.jsx)(G, { w: 14, delay: 0.4, gap: 2.2 }),
-                  (0, n.jsx)(PF, { src: p.couple, alt: 'Dr. Vandana and Dr. Sharan', kind: 'arch', w: 40, ratio: 1.5, rot: -2, delay: 0.7, pos: '50% 38%', style: { alignSelf: 'flex-start', marginLeft: w(6) } }),
-                  (0, n.jsx)(PF, { src: p.kids, alt: 'Little Vandana and Sharan in traditional wear', kind: 'round', w: 34, ratio: 1.1, rot: 2.4, delay: 1.5, pos: '50% 22%', style: { alignSelf: 'flex-end', marginRight: w(5), marginTop: w(-9) } }),
+                  (0, n.jsx)(PF, { src: p.couple, alt: 'Dr. Sharan and Dr. Vandana', kind: 'arch', w: 40, ratio: 1.5, rot: -2, delay: 0.7, pos: '50% 38%', style: { alignSelf: 'flex-start', marginLeft: w(6) } }),
+                  (0, n.jsx)(PF, { src: p.kids, alt: 'Little Sharan and Vandana in traditional wear', kind: 'round', w: 34, ratio: 1.1, rot: 2.4, delay: 1.5, pos: '50% 22%', style: { alignSelf: 'flex-end', marginRight: w(5), marginTop: w(-9) } }),
                   (0, n.jsx)(X, { size: 8, delay: 2.4, style: { marginTop: w(3) }, children: 'Made for each other' }),
                 ],
               }),
@@ -2167,8 +2133,8 @@ export default function () {
                   (0, n.jsx)(X, { size: 8.8, delay: 0.5, children: 'Blessings and Love' }),
                   (0, n.jsx)(G, { w: 16, delay: 1.6, gap: 2.8 }),
                   [
-                    ['Bride’s Parents', 'Anil Kumar & Bindu Anil', 1.9],
-                    ['Groom’s Parents', 'Anbarasan & Hepziba Elizabeth Rita', 3.6],
+                    ['Groom’s Parents', 'Anbarasan & Hepziba Elizabeth Rita', 1.9],
+                    ['Bride’s Parents', 'Anil Kumar & Bindu Anil', 3.6],
                   ].map(([a, e, i], r) =>
                     (0, n.jsxs)(
                       'div',
@@ -2306,7 +2272,7 @@ export default function () {
                     ],
                   }),
                   (0, n.jsx)(G, { w: 14, delay: 1.9, gap: 3 }),
-                  (0, n.jsx)(X, { size: 7, delay: 2.2, children: 'Dr. Vandana & Dr. Sharan' }),
+                  (0, n.jsx)(X, { size: 7, delay: 2.2, children: 'Dr. Sharan & Dr. Vandana' }),
                   (0, n.jsx)(B, {
                     size: 2.6,
                     track: 0.46,
