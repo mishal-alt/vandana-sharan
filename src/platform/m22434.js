@@ -153,6 +153,11 @@ let N = (a) => Math.round(100 * a) / 100,
 .aa-in .aa-leaf{animation:aa-leaf .7s cubic-bezier(.3,1.5,.5,1) var(--d,0s) both}
 @keyframes aa-rise{from{opacity:0;transform:translateY(16px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
 @keyframes aa-wipe{from{opacity:1;clip-path:inset(-30% 100% -30% 0)}to{opacity:1;clip-path:inset(-30% -8% -30% 0)}}
+@keyframes aa-flt{0%,100%{transform:translateY(0)}50%{transform:translateY(calc(var(--u)*-.9))}}
+@keyframes aa-sweep{0%,55%{transform:translateX(-130%) skewX(-18deg)}100%{transform:translateX(330%) skewX(-18deg)}}
+.aa-flt{animation:aa-flt 7s ease-in-out infinite;animation-delay:var(--fd,0s)}
+.aa-shine{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.aa-shine::after{content:'';position:absolute;top:0;bottom:0;left:0;width:34%;background:linear-gradient(100deg,rgba(255,250,235,0),rgba(255,250,235,.5),rgba(255,250,235,0));animation:aa-sweep 7.5s ease-in-out infinite;animation-delay:var(--sd,2s)}
 @keyframes aa-draw{from{opacity:1;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
 @keyframes aa-pop{0%{opacity:0;transform:translateY(-26px) scale(.6)}60%{opacity:1;transform:translateY(3px) scale(1.06)}100%{opacity:1;transform:none}}
 @keyframes aa-char{from{opacity:0;transform:translateY(.55em) rotateX(75deg);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
@@ -1871,29 +1876,41 @@ function af({ delay: a }) {
     ],
   })
 }
-function PF({ src: a, alt: e, w: t, ratio: i, rot: r, delay: o, pos: l, style: c }) {
+function PF({ src: a, alt: e, w: t, ratio: i, rot: r, delay: o, pos: l, kind: k, style: c }) {
+  let rad = k === 'arch' ? `${w(t / 2 + 2.2)} ${w(t / 2 + 2.2)} ${w(1.2)} ${w(1.2)}` : w(3.2),
+    rad2 = k === 'arch' ? `${w(t / 2)} ${w(t / 2)} ${w(0.5)} ${w(0.5)}` : w(2.2)
   return (0, n.jsx)('div', {
     className: 'aa-r',
-    style: {
-      ...$(o),
-      width: w(t),
-      padding: w(1.6),
-      background: '#fbf6ec',
-      border: '1px solid rgba(176,141,87,.5)',
-      boxShadow: '0 10px 26px rgba(90,64,40,.24), 0 1px 3px rgba(90,64,40,.18)',
-      transform: `rotate(${r}deg)`,
-      boxSizing: 'content-box',
-      ...c,
-    },
-    children: (0, n.jsx)('div', {
-      style: { width: '100%', paddingTop: `${100 * i}%`, position: 'relative', overflow: 'hidden', background: '#e9dfcf' },
-      children: (0, n.jsx)('img', {
-        src: a,
-        alt: e,
-        draggable: !1,
-        loading: 'lazy',
-        style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: l },
-      }),
+    style: { ...$(o), transform: `rotate(${r}deg)`, ...c },
+    children: (0, n.jsxs)('div', {
+      className: 'aa-flt',
+      style: {
+        '--fd': `${o}s`,
+        '--sd': `${o + 1.5}s`,
+        position: 'relative',
+        width: w(t + 4.6),
+        padding: w(0.9),
+        boxSizing: 'border-box',
+        background: 'linear-gradient(135deg,#8d6b35 0%,#e2c98e 24%,#b8935a 48%,#f0dfae 72%,#9a773c 100%)',
+        borderRadius: rad,
+        boxShadow: '0 14px 30px rgba(90,64,40,.30), 0 2px 5px rgba(90,64,40,.2)',
+      },
+      children: [
+        (0, n.jsx)('div', {
+          style: { background: '#fbf6ec', padding: w(1.5), borderRadius: rad2, boxShadow: 'inset 0 0 0 1px rgba(176,141,87,.5)' },
+          children: (0, n.jsx)('div', {
+            style: { position: 'relative', width: '100%', paddingTop: `${100 * i}%`, overflow: 'hidden', background: '#e9dfcf', borderRadius: k === 'arch' ? `${w(t / 2 - 1)} ${w(t / 2 - 1)} ${w(0.4)} ${w(0.4)}` : w(1.4) },
+            children: (0, n.jsx)('img', {
+              src: a,
+              alt: e,
+              draggable: !1,
+              loading: 'lazy',
+              style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: l },
+            }),
+          }),
+        }),
+        (0, n.jsx)('div', { className: 'aa-shine', style: { borderRadius: rad }, 'aria-hidden': !0 }),
+      ],
     }),
   })
 }
@@ -2131,8 +2148,8 @@ export default function () {
                 children: [
                   (0, n.jsx)(B, { size: 3, track: 0.5, color: x, delay: 0.1, children: 'Our Moments' }),
                   (0, n.jsx)(G, { w: 14, delay: 0.4, gap: 2.2 }),
-                  (0, n.jsx)(PF, { src: p.couple, alt: 'Dr. Vandana and Dr. Sharan', w: 44, ratio: 1.5, rot: -3, delay: 0.7, pos: '50% 30%', style: { alignSelf: 'flex-start', marginLeft: w(6) } }),
-                  (0, n.jsx)(PF, { src: p.kids, alt: 'Little Vandana and Sharan in traditional wear', w: 44, ratio: 1.1, rot: 2.6, delay: 1.5, pos: '50% 25%', style: { alignSelf: 'flex-end', marginRight: w(6), marginTop: w(-5) } }),
+                  (0, n.jsx)(PF, { src: p.couple, alt: 'Dr. Vandana and Dr. Sharan', kind: 'arch', w: 40, ratio: 1.5, rot: -2, delay: 0.7, pos: '50% 38%', style: { alignSelf: 'flex-start', marginLeft: w(6) } }),
+                  (0, n.jsx)(PF, { src: p.kids, alt: 'Little Vandana and Sharan in traditional wear', kind: 'round', w: 34, ratio: 1.1, rot: 2.4, delay: 1.5, pos: '50% 22%', style: { alignSelf: 'flex-end', marginRight: w(5), marginTop: w(-9) } }),
                   (0, n.jsx)(X, { size: 8, delay: 2.4, style: { marginTop: w(3) }, children: 'Made for each other' }),
                 ],
               }),
