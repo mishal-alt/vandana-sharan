@@ -18,6 +18,8 @@ let d = '135f969c-2fe5-4cda-b5da-3705554f4082',
     envelope: `${h}/envelope.webp`,
     reveal: `${h}/reveal.webp`,
     couple: `${h}/couple.webp`,
+    qrVenue: `${h}/qr-venue.png`,
+    qrReception: `${h}/qr-reception.png`,
     kids: `${h}/kids.webp`,
     foil: `${h}/foil.webp`,
     floral: `${h}/floral.webp`,
@@ -1854,6 +1856,30 @@ function af({ delay: a }) {
     ],
   })
 }
+function QR({ src: a, alt: e, delay: t, style: r }) {
+  return (0, n.jsxs)('div', {
+    className: 'aa-r',
+    style: { ...$(t), display: 'flex', flexDirection: 'column', alignItems: 'center', ...r },
+    children: [
+      (0, n.jsx)('div', {
+        style: {
+          width: w(28),
+          padding: w(1.1),
+          background: '#fff',
+          borderRadius: w(1.6),
+          border: `1px solid ${b}`,
+          boxShadow: '0 6px 18px rgba(90,64,40,.18)',
+          lineHeight: 0,
+        },
+        children: (0, n.jsx)('img', { src: a, alt: e, draggable: !1, style: { width: '100%', display: 'block' } }),
+      }),
+      (0, n.jsx)('p', {
+        style: { fontFamily: j, fontWeight: 500, fontSize: w(2.2), letterSpacing: '.28em', paddingLeft: '.28em', textTransform: 'uppercase', color: x, margin: `${w(1.4)} 0 0` },
+        children: 'Scan for directions',
+      }),
+    ],
+  })
+}
 function PF({ src: a, alt: e, w: t, ratio: i, rot: r, delay: o, pos: l, kind: k, style: c }) {
   let rad = k === 'arch' ? `${w(t / 2 + 2.2)} ${w(t / 2 + 2.2)} ${w(1.2)} ${w(1.2)}` : w(3.2),
     rad2 = k === 'arch' ? `${w(t / 2)} ${w(t / 2)} ${w(0.5)} ${w(0.5)}` : w(2.2)
@@ -1965,6 +1991,9 @@ export default function () {
                 top: 24,
                 bottom: 22.5,
                 children: [
+                  (0, n.jsx)(Y, { text: '“Let us take these seven steps together', delay: 0.2 }),
+                  (0, n.jsx)(Y, { text: 'and be friends for life…”', delay: 0.9 }),
+                  (0, n.jsx)(G, { w: 18, delay: 1.9, gap: 3.4 }),
                   (0, n.jsx)(B, {
                     size: 2.7,
                     track: 0.32,
@@ -2086,19 +2115,14 @@ export default function () {
                     children: 'Kochi · Kerala',
                   }),
                   (0, n.jsxs)('a', {
-                    href: 'https://www.google.com/maps/search/?api=1&query=Souparnika+Auditorium+Chottanikara+Kochi',
+                    href: 'https://www.google.com/maps/search/?api=1&query=Souparnika+Auditorium+Chottanikkara+Manchakkad+Kavala+Road+Thrippunithura+Kerala+682312',
                     target: '_blank',
                     rel: 'noopener noreferrer',
                     className: 'aa-pill aa-r',
                     style: { ...$(2.4), marginTop: w(4.6) },
                     children: [(0, n.jsx)(V, { size: w(3.6) }), 'View on map'],
                   }),
-                  (0, n.jsx)(X, {
-                    size: 8.6,
-                    delay: 3,
-                    style: { marginTop: w(4.6) },
-                    children: 'Reception on 7 December',
-                  }),
+                  (0, n.jsx)(QR, { src: p.qrVenue, alt: 'QR code for Souparnika Auditorium directions', delay: 3, style: { marginTop: w(4) } }),
                 ],
               }),
             }),
@@ -2205,8 +2229,8 @@ export default function () {
               overlays: (0, n.jsx)(ae, {}),
               label: 'The reception',
               children: (0, n.jsxs)(J, {
-                top: 17,
-                bottom: 45,
+                top: 12,
+                bottom: 30,
                 wash: !0,
                 children: [
                   (0, n.jsx)(B, {
@@ -2243,10 +2267,15 @@ export default function () {
                       'from 5:30 PM onwards',
                     ],
                   }),
-                  (0, n.jsx)(ah, { delay: 2.1 }),
-                  (0, n.jsx)(X, { size: 6.8, delay: 2.7, children: 'Two hearts,' }),
-                  (0, n.jsx)(X, { size: 6.8, delay: 3.2, children: 'Two journeys,' }),
-                  (0, n.jsx)(X, { size: 6.8, delay: 3.7, children: 'One homeward song.' }),
+                  (0, n.jsxs)('a', {
+                    href: 'https://maps.app.goo.gl/bF2nE3JyVCcG1EFD6',
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    className: 'aa-pill aa-r',
+                    style: { ...$(2.2), marginTop: w(3.4) },
+                    children: [(0, n.jsx)(V, { size: w(3.6) }), 'View on map'],
+                  }),
+                  (0, n.jsx)(QR, { src: p.qrReception, alt: 'QR code for Dhanalakshmi Srinivasan Mahal directions', delay: 2.8, style: { marginTop: w(3.4) } }),
                 ],
               }),
             }),
