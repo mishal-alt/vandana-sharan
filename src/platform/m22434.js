@@ -19,6 +19,10 @@ let d = '135f969c-2fe5-4cda-b5da-3705554f4082',
     reveal: `${h}/reveal.webp`,
     couple: `${h}/couple.webp`,
     qrVenue: `${h}/qr-venue.png`,
+    formal: `${h}/formal.webp`,
+    pottery1: `${h}/pottery1.webp`,
+    pottery2: `${h}/pottery2.webp`,
+    steps: `${h}/steps.webp`,
     qrReception: `${h}/qr-reception.png`,
     kids: `${h}/kids.webp`,
     foil: `${h}/foil.webp`,
@@ -1881,8 +1885,8 @@ function QR({ src: a, alt: e, delay: t, style: r }) {
   })
 }
 function PF({ src: a, alt: e, w: t, ratio: i, rot: r, delay: o, pos: l, kind: k, style: c }) {
-  let rad = k === 'arch' ? `${w(t / 2 + 2.2)} ${w(t / 2 + 2.2)} ${w(1.2)} ${w(1.2)}` : w(3.2),
-    rad2 = k === 'arch' ? `${w(t / 2)} ${w(t / 2)} ${w(0.5)} ${w(0.5)}` : w(2.2)
+  let rad = k === 'oval' ? '50%' : k === 'arch' ? `${w(t / 2 + 2.2)} ${w(t / 2 + 2.2)} ${w(1.2)} ${w(1.2)}` : w(3.2),
+    rad2 = k === 'oval' ? '50%' : k === 'arch' ? `${w(t / 2)} ${w(t / 2)} ${w(0.5)} ${w(0.5)}` : w(2.2)
   return (0, n.jsx)('div', {
     className: 'aa-r',
     style: { ...$(o), transform: `rotate(${r}deg)`, ...c },
@@ -1903,7 +1907,7 @@ function PF({ src: a, alt: e, w: t, ratio: i, rot: r, delay: o, pos: l, kind: k,
         (0, n.jsx)('div', {
           style: { background: '#fbf6ec', padding: w(1.5), borderRadius: rad2, boxShadow: 'inset 0 0 0 1px rgba(176,141,87,.5)' },
           children: (0, n.jsx)('div', {
-            style: { position: 'relative', width: '100%', paddingTop: `${100 * i}%`, overflow: 'hidden', background: '#e9dfcf', borderRadius: k === 'arch' ? `${w(t / 2 - 1)} ${w(t / 2 - 1)} ${w(0.4)} ${w(0.4)}` : w(1.4) },
+            style: { position: 'relative', width: '100%', paddingTop: `${100 * i}%`, overflow: 'hidden', background: '#e9dfcf', borderRadius: k === 'oval' ? '50%' : k === 'arch' ? `${w(t / 2 - 1)} ${w(t / 2 - 1)} ${w(0.4)} ${w(0.4)}` : w(1.4) },
             children: (0, n.jsx)('img', {
               src: a,
               alt: e,
@@ -1988,8 +1992,8 @@ export default function () {
               label: 'The invitation',
               eager: !0,
               children: (0, n.jsxs)(J, {
-                top: 24,
-                bottom: 22.5,
+                top: 15,
+                bottom: 8,
                 children: [
                   (0, n.jsx)(Y, { text: '“Let us take these seven steps together', delay: 0.2 }),
                   (0, n.jsx)(Y, { text: 'and be friends for life…”', delay: 0.9 }),
@@ -2021,6 +2025,7 @@ export default function () {
                     style: { marginTop: w(0.8) },
                     children: 'Wedding',
                   }),
+                  (0, n.jsx)(PF, { src: p.formal, alt: 'Dr. Sharan and Dr. Vandana', kind: 'oval', w: 32, ratio: 1.25, rot: 0, delay: 4.6, pos: '56% 50%', style: { marginTop: w(5) } }),
                 ],
               }),
             }),
@@ -2093,6 +2098,24 @@ export default function () {
                   (0, n.jsx)(PF, { src: p.couple, alt: 'Dr. Sharan and Dr. Vandana', kind: 'arch', w: 40, ratio: 1.5, rot: -2, delay: 0.7, pos: '50% 38%', style: { alignSelf: 'flex-start', marginLeft: w(6) } }),
                   (0, n.jsx)(PF, { src: p.kids, alt: 'Little Sharan and Vandana in traditional wear', kind: 'round', w: 34, ratio: 1.1, rot: 2.4, delay: 1.5, pos: '50% 22%', style: { alignSelf: 'flex-end', marginRight: w(5), marginTop: w(-9) } }),
                   (0, n.jsx)(X, { size: 8, delay: 2.4, style: { marginTop: w(3) }, children: 'Made for each other' }),
+                ],
+              }),
+            }),
+            (0, n.jsx)(q, {
+              id: 'aa-together',
+              art: p.floral,
+              flip: 'x',
+              label: 'Together',
+              children: (0, n.jsxs)(J, {
+                top: 13,
+                bottom: 12,
+                wash: !0,
+                children: [
+                  (0, n.jsx)(B, { size: 3, track: 0.5, color: x, delay: 0.1, children: 'Together' }),
+                  (0, n.jsx)(G, { w: 14, delay: 0.4, gap: 2.2 }),
+                  (0, n.jsx)(PF, { src: p.pottery1, alt: 'Dr. Sharan and Dr. Vandana at the pottery wheel', kind: 'round', w: 40, ratio: 1.3, rot: -2.4, delay: 0.7, pos: '50% 40%', style: { alignSelf: 'flex-end', marginRight: w(6) } }),
+                  (0, n.jsx)(PF, { src: p.pottery2, alt: 'Dr. Sharan and Dr. Vandana laughing while making pottery', kind: 'round', w: 40, ratio: 1.3, rot: 2.2, delay: 1.5, pos: '50% 40%', style: { alignSelf: 'flex-start', marginLeft: w(6), marginTop: w(-5) } }),
+                  (0, n.jsx)(X, { size: 8, delay: 2.4, style: { marginTop: w(3) }, children: 'Shaping our forever' }),
                 ],
               }),
             }),
@@ -2285,10 +2308,11 @@ export default function () {
               flip: 'y',
               label: 'With love',
               children: (0, n.jsxs)(J, {
-                top: 34,
-                bottom: 14,
+                top: 13,
+                bottom: 10,
                 children: [
-                  (0, n.jsx)(af, { delay: 0.2 }),
+                  (0, n.jsx)(PF, { src: p.steps, alt: 'Dr. Sharan and Dr. Vandana on the steps', kind: 'arch', w: 30, ratio: 1.15, rot: 0, delay: 0.2, pos: '50% 55%', style: { marginBottom: w(3) } }),
+                  (0, n.jsx)(af, { delay: 0.8 }),
                   (0, n.jsxs)(O, {
                     size: 4.5,
                     delay: 1.3,
